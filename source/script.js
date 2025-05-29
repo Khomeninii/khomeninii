@@ -52,3 +52,13 @@ function createParticle(x, y) {
         particle.remove();
     }, 1000);
 }
+
+fetch('https://raw.githubusercontent.com/Khomeninii/khomeninii/main/README.md')
+    .then(res => res.text())
+    .then(data => {
+        document.getElementById('readme-content').textContent = data;
+    })
+    .catch(err => {
+        document.getElementById('readme-content').textContent = 'خطا در بارگذاری README.md';
+        console.error(err);
+    });
